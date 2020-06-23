@@ -21,20 +21,6 @@ Resources:
       Description: API used for Greeting requests
       FailOnWarnings: true
 
-  GreetingApiStage:
-    DependsOn:
-      - ApiGatewayAccount
-    Type: AWS::ApiGateway::Stage
-    Properties:
-      DeploymentId: !Ref 'ApiDeployment'
-      MethodSettings:
-        - DataTraceEnabled: true
-          HttpMethod: '*'
-          LoggingLevel: INFO
-          ResourcePath: /*
-      RestApiId: !Ref 'GreetingApi'
-      StageName: LATEST
-
   GreetingResource:
     Type: AWS::ApiGateway::Resource
     Properties:
@@ -72,6 +58,20 @@ Resources:
       RestApiId: !Ref 'GreetingApi'
       MethodResponses:
         - StatusCode: "200"
+
+  GreetingApiStage:
+    DependsOn:
+      - ApiGatewayAccount
+    Type: AWS::ApiGateway::Stage
+    Properties:
+      DeploymentId: !Ref 'ApiDeployment'
+      MethodSettings:
+        - DataTraceEnabled: true
+          HttpMethod: '*'
+          LoggingLevel: INFO
+          ResourcePath: /*
+      RestApiId: !Ref 'GreetingApi'
+      StageName: LATEST
 
   ApiDeployment:
     Type: AWS::ApiGateway::Deployment
