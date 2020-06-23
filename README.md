@@ -9,23 +9,22 @@ Please read the [blog post](https://www.jayway.com/2016/08/17/introduction-to-cl
 
 [cloudformation.template](cloudformation.template)
 
-
-## Tools
+## Tools and dependencies
 
 In order to execute the scripts, you need to install the following tools:
 
 - [AWS CLI](https://aws.amazon.com/cli/) (AWS Command Line Interface)
-- [npm](https://www.npmjs.com/) (JavaScript package manager)
+- [npm](https://www.npmjs.com/) (JavaScript package manager*)
+- [nodejs](https://nodejs.org/) (JavaScript Backend Framework* based on V8 Chrome Engine)
 
+* Best installed with [nvm](https://github.com/nvm-sh/nvm) with version chaning, no sudo permission, located at home user.
 
 ## Scripts
 
 | Script                                                        | Description                |
 | ------------------------------------------------------------- | -------------------------- |
-| [create-stack.sh](scripts/create-stack.sh)                    | Creates the stack          |
+| [create-stack.sh](scripts/deploy-stack.sh)                    | Deploys the stack          |
 | [integration-test.sh](scripts/integration-test.sh)            | Executes integration tests |
-| [update-stack.sh](scripts/update-stack.sh)                    | Updates the stack          |
-
 
 ## Update
 
